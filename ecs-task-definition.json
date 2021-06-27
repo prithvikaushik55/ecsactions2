@@ -1,0 +1,24 @@
+{
+    "family": "actions-ec2-ecr",
+    "executionRoleArn": "arn:aws:iam::172739215887:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "actions-ec2-ecr",
+            "image": "172739215887.dkr.ecr.ap-south-1.amazonaws.com/actions-ec2-ecr:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
